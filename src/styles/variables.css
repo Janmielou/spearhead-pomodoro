@@ -1,0 +1,208 @@
+/* SPEARHEAD design tokens. Dark metal shell, light panels, blue highlights.
+   Dark metallic environment surrounding bright holographic displays.
+   These are design approximations, not official anime color codes. */
+:root {
+  /* Environment and structural surfaces (dark command room) */
+  --env-deep: #101923;
+  --metallic: #1b2633;
+  --metallic-2: #263645;
+  --struct-border: #506477;
+
+  /* Primary interface panels (illuminated displays) */
+  --holo-white: #eaf4fa;
+  --interface-white: #f5fafd;
+  --pale-blue: #d5eaf6;
+  --light-steel-blue: #b8d5e8;
+
+  /* Interface accents */
+  --cyan: #56c9f2;
+  --electric: #318fcb;
+  --deep-blue: #22628f;
+  --soft-glow: #8bdfff;
+
+  /* Typography */
+  --ink: #172b3b;
+  --ink-secondary: #496276;
+  --ink-muted: #556e82; /* darkened derivative of #8299AA for AA text on white */
+  --text-light: #eaf4fa;
+  --text-shell-secondary: #b9ccdb;
+  --text-shell-muted: #8299aa;
+
+  /* Semantic status tokens. Text colors are darkened derivatives that
+     stay readable on light panels; dots can use the brighter tone.
+     Mission status, priority, outcomes, and channels each own a set,
+     so the same color is never reused for two different meanings. */
+  --mission-pending: #496276;
+  --mission-pending-dot: #8299aa;
+  --mission-active: #22628f;
+  --mission-active-dot: #56c9f2;
+  --mission-completed: #2f7d5e;
+  --mission-completed-dot: #58a989;
+  --mission-archived: #556e82;
+  --mission-archived-dot: #8299aa;
+  --priority-low: #556e82;
+  --priority-normal: #22628f;
+  --priority-high: #8a6d2f;
+  --priority-critical: #a92e43;
+  --outcome-completed: #2f7d5e;
+  --outcome-skipped: #8a6d2f;
+  --outcome-abandoned: #a92e43;
+  --channel-handler: #22628f;
+  --channel-handler-dot: #56c9f2;
+  --channel-squadron: #318fcb;
+  --channel-squadron-dot: #318fcb;
+  --channel-system: #496276;
+  --channel-system-dot: #8299aa;
+  --channel-mission: #172b3b;
+  --channel-mission-dot: #22628f;
+  --cursor-neutral: #56c9f2;
+  --cursor-neutral-strong: #318fcb;
+  --cursor-target: #e4573d;
+  --cursor-target-soft: #ff8a70;
+  --timer-standby: #496276;
+  --timer-running: #22628f;
+  --timer-paused: #8a6d2f;
+  --timer-completed: #2f7d5e;
+
+  /* Operational indicators (text derivatives darkened for light panels) */
+  --status-green: #2f7d5e;
+  --status-green-bright: #58a989;
+  --status-amber: #8a6d2f;
+  --status-amber-bright: #d7ae63;
+  --status-red: #a92e43;
+  --status-red-soft: #c95662;
+  --status-info: #22628f;
+
+  /* Legacy aliases, kept so existing inline styles/components keep working */
+  --command-navy: var(--env-deep);
+  --panel-blue: var(--metallic);
+  --steel-blue: var(--metallic-2);
+  --signal-blue: var(--electric);
+  --light-steel: var(--light-steel-blue);
+  --text-primary: var(--text-light);
+  --text-secondary: var(--text-shell-secondary);
+  --text-muted: var(--text-shell-muted);
+  --border: var(--struct-border);
+  --bg-deep: #0c131c;
+  --panel-raised: var(--metallic-2);
+  --panel-inset: var(--pale-blue);
+  --hover: var(--metallic-2);
+
+  /* Handler Terminal surface tokens (the Para-RAID treatment) */
+  --terminal-top: #263645;
+  --terminal-bottom: #1b2633;
+  --terminal-border: #506477;
+  --terminal-text: #eaf4fa;
+  --terminal-muted: #b9ccdb;
+  --terminal-accent: #56c9f2;
+  --terminal-inset: rgba(16, 25, 35, 0.55);
+  --terminal-head: linear-gradient(90deg, rgba(86, 201, 242, 0.14), transparent 70%);
+
+  /* Form control tokens */
+  --input-bg: #ffffff;
+  --input-text: #172b3b;
+  --input-border: #b8d5e8;
+  --shell-gradient-start: #131f2c;
+
+  /* Light-panel semantic tokens */
+  --panel-bg: linear-gradient(180deg, var(--interface-white), var(--holo-white));
+  --panel-head-bg: linear-gradient(90deg, var(--pale-blue), var(--holo-white));
+  --panel-border: #506477;
+  --panel-divider: #b8d5e8;
+  --panel-text: var(--ink);
+  --panel-text-2: var(--ink-secondary);
+  --panel-text-muted: var(--ink-muted);
+  --inset-bg: #ffffff;
+  --inset-border: #b8d5e8;
+
+  /* Typography (Spec §4) */
+  --font-display: 'Rajdhani', 'Segoe UI', sans-serif;
+  --font-body: 'Inter', 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Consolas', monospace;
+
+  /* Layout */
+  --sidebar-width: 248px;
+  --topbar-height: 60px;
+  --radius: 2px;
+  --gap: 16px;
+
+  /* Motion */
+  --transition: 160ms ease;
+
+  /* Atmosphere defaults = STANDBY */
+  --atmos-glow: rgba(86, 201, 242, 0.08);
+  --atmos-accent: var(--electric);
+  --atmos-accent-bright: var(--cyan);
+  --atmos-panel-shadow: 0 12px 32px rgba(0, 0, 0, 0.38);
+}
+
+/* --- Three interface states (Redesign §5). STANDBY is live today;
+   ACTIVE / SANCTUARY are token-complete for Phase 2/6 to switch on. --- */
+.app-shell[data-atmosphere='standby'] {
+  --atmos-glow: rgba(86, 201, 242, 0.08);
+  --atmos-accent: var(--electric);
+  --atmos-accent-bright: var(--cyan);
+}
+.app-shell[data-atmosphere='active'] {
+  --atmos-glow: rgba(86, 201, 242, 0.18);
+  --atmos-accent: var(--cyan);
+  --atmos-accent-bright: var(--soft-glow);
+}
+.app-shell[data-atmosphere='sanctuary'] {
+  --atmos-glow: rgba(139, 223, 255, 0.05);
+  --atmos-accent: #7fb6d9;
+  --atmos-accent-bright: #a8d4ec;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition: 0ms;
+  }
+}
+
+.app-shell[data-animations='off'] {
+  --transition: 0ms;
+}
+
+/* Paused is a fourth, quieter state. Amber instead of cyan. */
+.app-shell[data-atmosphere='paused'] {
+  --atmos-glow: rgba(215, 174, 99, 0.1);
+  --atmos-accent: #b8933f;
+  --atmos-accent-bright: #d7ae63;
+}
+
+/* Tactical Dark: same token system, layered dark displays.
+   Semantic badge text derivatives intentionally stay dark because
+   badges keep their bright chip background in both themes. */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --env-deep: #080f18;
+  --bg-deep: #080f18;
+  --metallic: #152635;
+  --metallic-2: #20384a;
+  --struct-border: #3b596f;
+  --shell-gradient-start: #0a141f;
+  --panel-bg: linear-gradient(180deg, #1a2d3e, #142331);
+  --panel-head-bg: linear-gradient(90deg, #20384a, #1a2d3e);
+  --panel-border: #3b596f;
+  --panel-divider: #2a4358;
+  --ink: #eaf4fa;
+  --ink-secondary: #b8cad8;
+  --ink-muted: #9db4c6;
+  --panel-text: #eaf4fa;
+  --panel-text-2: #b8cad8;
+  --panel-text-muted: #9db4c6;
+  --inset-bg: #0d1925;
+  --inset-border: #2a4358;
+  --input-bg: #0d1925;
+  --input-text: #eaf4fa;
+  --input-border: #2a4358;
+  --terminal-top: #20394c;
+  --terminal-bottom: #152737;
+  --terminal-border: #3b596f;
+  --terminal-inset: rgba(8, 15, 24, 0.6);
+  --atmos-panel-shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
+}
+:root {
+  color-scheme: light;
+}

@@ -1,0 +1,105 @@
+/* SPEARHEAD global styles, dark command-room environment */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* Metallic room: deep base with a soft cyan wash from the displays */
+  background:
+    radial-gradient(1100px 500px at 70% -10%, var(--atmos-glow), transparent 60%),
+    linear-gradient(180deg, var(--shell-gradient-start), var(--bg-deep) 55%);
+  background-attachment: fixed;
+  color: var(--text-light);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* fine + coarse tactical grids over the room, never over readability */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(86, 201, 242, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(86, 201, 242, 0.03) 1px, transparent 1px),
+    linear-gradient(rgba(139, 223, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 223, 255, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px, 48px 48px, 240px 240px, 240px 240px;
+  z-index: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--cyan);
+  color: var(--ink);
+}
+
+/* Military labels, color adapts to dark shell vs. light panel context */
+.ops-label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-shell-muted);
+}
+.panel .ops-label {
+  color: var(--deep-blue);
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+/* Thin custom scrollbar, terminal-like */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--metallic);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--struct-border);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--electric);
+}
