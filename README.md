@@ -193,6 +193,8 @@ SPEARHEAD is an unofficial, non-commercial fan project inspired by the setting a
 
 ## License
 
-This project is licensed under the MIT License.
+SPEARHEAD's original source code and documentation are licensed under the [MIT License](LICENSE).
 
-You are free to use, modify, and distribute the original SPEARHEAD source code under the terms of the MIT License. The MIT License does not grant rights to third-party names, artwork, characters, or other material from *86 -EIGHTY-SIX-*.
+You are free to use, modify, and distribute the original SPEARHEAD code under the terms of that license.
+
+The MIT License does not grant rights to third-party intellectual property associated with *86 -EIGHTY-SIX-*, including its characters, artwork, names, logos, and other copyrighted material. All such rights belong to their respective owners.
