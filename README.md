@@ -185,4 +185,6 @@ SPEARHEAD is an unofficial, non-commercial fan project inspired by the setting a
 
 ## License
 
-No license file is included in the current project. If you plan to let other people reuse or modify the code, choose a license and add a `LICENSE` file to the repository. Making a GitHub repository public does not, by itself, grant reuse rights.
+This project is licensed under the MIT License.
+
+You are free to use, modify, and distribute the original SPEARHEAD source code under the terms of the MIT License.
