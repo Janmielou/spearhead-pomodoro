@@ -6,6 +6,10 @@ SPEARHEAD turns a normal focus routine into a small command-center workflow. Cre
 
 The interface takes inspiration from the military command systems and terminology of *86 -EIGHTY-SIX-*. SPEARHEAD is a personal productivity project, not an official app or a product connected to the series.
 
+> **Project status: Work in progress.** SPEARHEAD is actively being developed and is not a finalized or stable release. Features, appearance, behavior, and internal implementation may change as the project evolves. Some parts may still be experimental, incomplete, or need further testing. Screenshots, instructions, and feature descriptions in this repository may not always reflect the latest version.
+
+At present, SPEARHEAD is a browser-based application that you run locally on your computer using the development server described below. It does not currently require an account or a hosted online service.
+
 ## What can I do with it?
 
 SPEARHEAD is organised into five sections. Each one has a specific job:
@@ -140,7 +144,7 @@ node tests/operationLogic.test.mjs
 node tests/interfaceAndData.test.mjs
 ```
 
-The current project snapshot has **105 passing automated logic checks** across these five test files. These tests check application rules and data handling; they are not a substitute for checking the interface and animations in a real browser.
+The project snapshot used to prepare this README had **105 passing automated logic checks** across these five test files. These tests check application rules and data handling; they are not a substitute for checking the interface and animations in a real browser. Test results may change as development continues.
 
 ## Where things live in the project
 
@@ -175,9 +179,13 @@ This means:
 - Export a backup regularly if you want to keep a separate copy or move your data to another browser or device.
 - Importing a backup is the way to restore data in another browser.
 
-## Current development status
+## Development status and known limitations
 
-SPEARHEAD is an ongoing personal project. The core timer, mission planner, Para-RAID feed, session history, settings, and browser backup tools are implemented. The enhanced mosaic page transition is still being refined, so its visual behavior and performance may vary across browsers and devices. You can turn it off in **System Configuration → Interface Preferences → Enhanced Page Transitions**.
+SPEARHEAD is an ongoing project, and its current feature set should not be treated as final. Features may be added, adjusted, redesigned, or removed as development continues. The interface, stored data format, and behavior may also change between versions.
+
+The core timer, mission planner, Para-RAID activity feed, session history, settings, and browser backup tools are implemented, but they may still receive updates and refinements. In particular, the enhanced mosaic page transition is experimental and is still being refined. Its appearance and performance may vary across browsers and devices. You can turn it off in **System Configuration → Interface Preferences → Enhanced Page Transitions**.
+
+Because the project is under active development, occasional bugs, unfinished details, or unexpected behavior may occur. Keep a backup of important data before testing new versions.
 
 ## Fan-project notice
 
@@ -187,4 +195,4 @@ SPEARHEAD is an unofficial, non-commercial fan project inspired by the setting a
 
 This project is licensed under the MIT License.
 
-You are free to use, modify, and distribute the original SPEARHEAD source code under the terms of the MIT License.
+You are free to use, modify, and distribute the original SPEARHEAD source code under the terms of the MIT License. The MIT License does not grant rights to third-party names, artwork, characters, or other material from *86 -EIGHTY-SIX-*.
